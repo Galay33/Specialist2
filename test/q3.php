@@ -8,6 +8,7 @@
 			<input type='radio' name='answer' value='c3'>15<br>
 			<input type='hidden' name='title' value='Получите результат'>
 			<input type='submit' value='Ответить'>
+            <input type='hidden' name='q' value='<?= ++$q?>'>
 		</form>
 		</td>
 	</tr>
