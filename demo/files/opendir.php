@@ -3,9 +3,12 @@
 <TITLE>opendir</TITLE>
 </HEAD>
 <BODY>
-<?
-	$dir = opendir(".");
-
+    <pre>
+<?php
+    print_r(scandir("../../", 1));
+	/* $dir = opendir(".");
+	    echo readdir($dir) . '<br>';
+	
 	while($name = readdir($dir)){
 		
 		if(is_dir($name))
@@ -13,10 +16,11 @@
 		else
 			echo $name.'<br>';
 	}
-
+	
 	closedir($dir);
 	
-	
+	*/
 ?>
+</pre>
 </BODY>
 </HTML>

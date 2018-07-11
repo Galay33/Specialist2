@@ -1,11 +1,16 @@
 <?
+	// Имя файла журнала
+	define("PATH_LOG", "log/path.log");
 	include 'inc/headers.inc.php';
+	include 'inc/cookie.inc.php';
+	include 'inc/log.inc.php';
 ?>
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru" lang="ru">
 	<head>
 		<title><?= $title?></title>
-		<meta charset="utf-8" />
+		<meta http-equiv="content-type"
+			content="text/html;charset=utf-8" />
 		<link rel="stylesheet" type="text/css" href="inc/style.css" />
 	</head>
 	<body>
@@ -20,6 +25,16 @@
 		<div id="content">
 			<!-- Заголовок -->
 			<h1><?= $header?></h1>
+			<blockquote>
+				<?php 
+					if ($visitCounter == 1) {
+						echo "Спасибо, что зашли на огонек";
+					} else {
+						echo "Вы зашли к нам $visitCounter раз
+Последнее посещение: $lastVisit";
+					}
+				 ?>
+			</blockquote>
 			<!-- Заголовок -->
 			<!-- Область основного контента -->
 			<?php
@@ -38,12 +53,13 @@
 				<li><a href='test/index.php'>Он-лайн тест</a></li>
 				<li><a href='index.php?id=gbook'>Гостевая книга</a></li>
 				<li><a href='eshop/catalog.php'>Магазин</a></li>
+				<li><a href="index.php?id=log">Журнал посещений</a></li>
 			</ul>
 			<!-- Навигация -->
 		</div>
 		<div id="footer">
 			<!-- Нижняя часть страницы -->
-			&copy; Супер-мега сайт, 2000 &ndash; <?= date('Y')?>
+			&copy; Супер-мега сайт, 2000 - <?= date('Y')?>
 			<!-- Нижняя часть страницы -->
 		</div>
 	</body>
